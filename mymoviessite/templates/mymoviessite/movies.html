@@ -1,0 +1,23 @@
+{% extends 'mymoviessite/layout.html' %}
+
+{% block title %}Movie page{% endblock %}
+{% block content %}
+        <div class="features">
+            <h2>Trailer</h2>
+            {% if movies %}
+                {% for el in movies %}
+                    <div class="alert alert-warning">
+                        <h3>{{ el.title }}</h3>
+                        <p>{{ el.description }}</p>
+                        <a href="{% url 'details_view' el.movie_id %}" class="btn btn-warning">Watch here</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p> No movies, try this one </p>
+                <iframe allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/VIDEO_ID"
+                        width="560"></iframe>
+            {% endif %}
+
+            {# Comment #}
+        </div>
+{% endblock %}

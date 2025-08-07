@@ -1,0 +1,11 @@
+{% extends 'mymoviessite/layout.html' %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+{% block content %}
+        <div class="features">
+            <h2>{{ movie.title }} ({{ movie.year }})</h2>
+            <p>{{ movie.description }}</p>
+            <a href="{% url 'movie_delete' movie.movie_id%}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'movie_update' movie.movie_id%}" class="btn btn-info">Update</a>
+        </div>
+{% endblock %}

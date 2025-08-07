@@ -1,0 +1,16 @@
+{% extends 'mymoviessite/layout.html' %}
+
+{% block title %}Search page{% endblock %}
+{% block content %}
+        <div class="features">
+            <h2>Trailer</h2>
+
+            {% for el in movie %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.description }}</p>
+                </div>
+            {% endfor %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+{% endblock %}

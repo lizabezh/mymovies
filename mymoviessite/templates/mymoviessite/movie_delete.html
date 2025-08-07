@@ -1,0 +1,12 @@
+{% extends 'mymoviessite/layout.html' %}
+
+{% block title %}Delete movie{% endblock %}
+{% block content %}
+        <div class="features">
+            <h2>Delete movie</h2>
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-success" type="submit">Delete movie</button>
+            </form>
+        </div>
+{% endblock %}

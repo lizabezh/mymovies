@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> <!-- ссылка на бутстрап -->
+    <link rel="stylesheet" href="{% static 'mymoviessite/css/mymoviessite.css'%}"> <!-- добавили ссылку на свой css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'mymoviessite/img/logo.png'%}" alt="logo" >
+        <span class ="logo">MyMovies</span>
+        <h3>Navigation</h3>
+        <ul>
+            <a href="{% url 'home' %}" ><li><i class="fa-solid fa-house"></i> Main page</li></a>
+            <a href="{% url 'search' %}" ><li><i class="fa-solid fa-at"></i> Search page</li></a>
+            <a href="{% url 'movies' %}" ><li><i class="fa-solid fa-house"></i> Movies</li></a>
+            <a href="{% url 'profile' %}" ><li><i class="fa-solid fa-user"></i> Profile</li></a>
+            <a href="{% url 'add_movie' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Add movie</button></li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content%}
+        {% endblock %}
+    </main>
+</body>
+</html>
